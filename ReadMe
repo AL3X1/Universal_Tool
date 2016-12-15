@@ -8,7 +8,7 @@
  * This tool written on C programming language (not C++, not C#, not Comega, only Pure C)
  * Capabilities: # Work on dedicated working folder, that allows feel comfortable, when you working.
                  # Unzipping ROM's (everyone. CyanogenMod based, AOSP Based, MiUI and etc...)
-                 # Deodexing apk's, if you have .odex, you can quickli get rid of it.
+                 # Deodexing apk's, if you have .odex, you can quickly get rid of it.
                  # Decompiling and compiling  apk's. This step very important, if you want add own features (some animation, colors etc.)
                  # Unpacking boot.img and ramdisk. If you want look at "insides" of boot.img and edit some parameters, you need it.
                  # Unpacking system.new.dat and system.img. When you meet ROM's with system.new.dat, you understand me ;) ROM Porters need it too.
