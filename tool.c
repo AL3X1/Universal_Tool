@@ -72,25 +72,25 @@ int main()
             break;
         case 3:
             // Execution adb service (for showing devices, connected to PC)
-            system("adb devices");
+                system("adb devices");
             break;
         case 4:
             // Execution fastboot service (for connect device in fastboot mode to PC)
-            system("fastboot");
+                system("fastboot");
             break;
         case 5:
         {
             // Getting android rules for adb
-            system("sudo wget -O /etc/udev/rules.d/51-android.rules https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/android/51-android.rules");
+                system("sudo wget -O /etc/udev/rules.d/51-android.rules https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/android/51-android.rules");
             // Appropriation read/write mode to 51-android.rules
-            system("sudo chmod a+r /etc/udev/rules.d/51-android.rules");
+                system("sudo chmod a+r /etc/udev/rules.d/51-android.rules");
             // Restarting udev service (for accepting android rules)
-            system("sudo service udev restart");
+                system("sudo service udev restart");
             // Recieving adb and fastboot services
-            system("sudo apt-get install android-tools-adb android-tools-fastboot");
+                system("sudo apt-get install android-tools-adb android-tools-fastboot");
             printf("\nInstalling was succesful, now connect your device and press on 'adb menu'\n");
             // Waiting to user input
-            getchar();
+                getchar();
             break;
         }
         case 6:

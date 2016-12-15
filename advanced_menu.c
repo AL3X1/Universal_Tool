@@ -25,6 +25,7 @@ int advancedMenu()
     printf("\t [1] Edit build.prop\n");
     printf("\t [2] Debloat Menu\n");
     printf("\t [3] Edit updater-script\n");
+    printf("\t [4] Add Kernel Adiutor\n");
     printf("\t [0] Exit\n");
 
     scanf("%d", &key);
@@ -48,6 +49,9 @@ int advancedMenu()
         // Edit updater-script
         case 3:
                 system("gedit ~/UniversalTool/workspace/META-INF/com/google/android/updater-script");
+            break;
+        case 4:
+                system("cp ~/UniversalTool/insides/rom/KernelAdiutor/* ~/UniversalTool/workspace/system/priv-app");
         default:
             printf("Make a choice\n");
     }
