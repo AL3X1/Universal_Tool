@@ -10,7 +10,7 @@
  *  I don't use bash, i love C and program written on Pure C Programming language (first, as i look :) )
  *
  *  Libs for install Tool: libncurses5, python (2.7 or newer), JDK (not need but desirable)
- *  Thank's:
+ *  Thanks to:
  *  iBotPeaches - for ApkTool
  *  JesusFreke - for smali/baksmali
  *  xpirt - for sdat2img
@@ -29,7 +29,6 @@
 
 void logo()
 {
-
     printf("\t _   _       _                          _ _____           _\n");
     printf("\t| | | |_ __ (___   _____ _ __ ___  __ _| |_   ____   ___ | |\n");
     printf("\t| | | | '_ || | | / / _ | '__/ __|/ _` | | | |/ _ | / _ || |\n");
@@ -40,7 +39,6 @@ void logo()
 
 int main()
 {
-
     int     input;
     clrscr();
     logo();
@@ -62,20 +60,20 @@ int main()
     // Menu accelerate
     switch(input)
     {
+       // Calling romMenu function (from rom_menu.c)
         case 1:
-            // Calling romMenu function (from rom_menu.c)
             romMenu();
             break;
+       // Calling apkMenu function (from apk_menu.c)
         case 2:
-            // Calling apkMenu function (from apk_menu.c)
             apkMenu();
             break;
+      // Execution adb service (for showing devices, connected to PC)
         case 3:
-            // Execution adb service (for showing devices, connected to PC)
                 system("adb devices");
             break;
+      // Execution fastboot service (for connect device in fastboot mode to PC)
         case 4:
-            // Execution fastboot service (for connect device in fastboot mode to PC)
                 system("fastboot");
             break;
         case 5:
@@ -93,13 +91,13 @@ int main()
                 getchar();
             break;
         }
+        // [6] - it's Exit, return 0 to return accelerate to user
         case 6:
-            printf("Goodbye ;P\n");// [6] - it's Exit, return 0 to return accelerate to user
+            printf("Goodbye ;P\n");
             return 0;
         break;
         default:
             printf("Make ur choice!\n");
     }
-
     getchar();
 }
