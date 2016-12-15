@@ -50,24 +50,24 @@ int romMenu()
         case 1:
         {
             printf("\tDone\n");
-            getchar();
+                getchar();
 
-            system("mkdir workspace && cd workspace ");
+                system("mkdir workspace && cd workspace ");
 
             printf("\n\t[!]Throw your ROMZIP in on workspace folder\n");
 
-            getchar();
+                getchar();
             break;
         }
         // Unzipping ROM.zip
         case 2:
         {
 
-            system("cd workspace && unzip *.zip && cd ..");
+                system("cd workspace && unzip *.zip && cd ..");
 
             printf("\n\tROM is unzipped\n");
 
-            getchar();
+                getchar();
             break;
         }
         // Unpacking boot.img
@@ -162,13 +162,13 @@ int romMenu()
         case 8:
         {
 
-            getchar();
+                getchar();
 
-            system("cp ~/UniversalTool/insides/rom/supersu ~/UniversalTool/workspace/system/priv-app");
+                system("cp ~/UniversalTool/insides/rom/supersu ~/UniversalTool/workspace/system/priv-app");
 
             printf("\tDone\n");
 
-            getchar();
+                getchar();
             break;
         }
         // Enter to advanced menu
