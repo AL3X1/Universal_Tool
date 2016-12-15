@@ -52,6 +52,7 @@ int advancedMenu()
             break;
         case 4:
                 system("cp ~/UniversalTool/insides/rom/KernelAdiutor/* ~/UniversalTool/workspace/system/priv-app");
+            break;
         default:
             printf("Make a choice\n");
     }
