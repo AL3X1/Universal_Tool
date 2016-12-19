@@ -5,7 +5,7 @@
  \___/|_| |_|_| \_/ \___|_|  |___/\__,_|_| |_|\___/ \___/|_|
  
  * Universal tool - tool for android ROM and kernel developers. It's like a android kitchen;
- * This tool written on C programming language (not C++, not C#, not Comega, only Pure C)
+ * This tool written on C programming language
  * Capabilities: # Work on dedicated working folder, that allows feel comfortable, when you working.
                  # Unzipping ROM's (everyone. CyanogenMod based, AOSP Based, MiUI and etc...)
                  # Deodexing apk's, if you have .odex, you can quickly get rid of it.
