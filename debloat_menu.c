@@ -36,7 +36,7 @@ int debloatMenu()
         case 1:
         {
                 getchar();
-            system("cd ~/UniversalTool/workspace/system/app && rm -rf BasicDreams Email Exchange2 FMRadio Galaxy4 HoloSpiralWallpaper LiveWallpapers LiveWallpapersPicker NoiseField PhaseBeam PhotoPhase PhotoTable PicoTts PrintSpooler");
+            system("cd ~/Universal_Tool/workspace/system/app && rm -rf BasicDreams Email Exchange2 FMRadio Galaxy4 HoloSpiralWallpaper LiveWallpapers LiveWallpapersPicker NoiseField PhaseBeam PhotoPhase PhotoTable PicoTts PrintSpooler");
 
             printf("Done!\n");
                 getchar();
@@ -46,7 +46,7 @@ int debloatMenu()
         case 2:
         {
                 getchar();
-                system("cd ~/UniversalTool/workspace/system/priv-app && rm -rf BackupRestoreConfirmation CellBroadcastReceiver FusedLocation");
+                system("cd ~/Universal_Tool/workspace/system/priv-app && rm -rf BackupRestoreConfirmation CellBroadcastReceiver FusedLocation");
 
             printf("Done!\n");
                 getchar();
