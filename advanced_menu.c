@@ -39,7 +39,7 @@ int advancedMenu()
             break;
         // Edit build.prop
         case 1:
-            system("gedit ~/UniversalTool/workspace/system/build.prop");
+            system("gedit ~/Universal_Tool/workspace/system/build.prop");
                 getchar();
             break;
         // Enter in Debloat Menu (calling function from debloat_menu.c
@@ -48,10 +48,10 @@ int advancedMenu()
             break;
         // Edit updater-script
         case 3:
-                system("gedit ~/UniversalTool/workspace/META-INF/com/google/android/updater-script");
+                system("gedit ~/Universal_Tool/workspace/META-INF/com/google/android/updater-script");
             break;
         case 4:
-                system("cp ~/UniversalTool/insides/rom/KernelAdiutor/* ~/UniversalTool/workspace/system/priv-app");
+                system("cp ~/Universal_Tool/insides/rom/KernelAdiutor/* ~/Universal_Tool/workspace/system/priv-app");
             break;
         default:
             printf("Make a choice\n");
