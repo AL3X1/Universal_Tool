@@ -43,7 +43,7 @@ int apkMenu()
             printf("\t\nInstalling apktool\n");
 
             system("sudo apt-get install lib32ncurses5 -y");
-            system("cd ~/Kitchen/insides/apktool/");
+            system("cd ~/Universal_Tool/insides/apktool/");
             system("sudo cp apktool.jar /usr/local/bin && sudo cp apktool /usr/local/bin");
             system("cd /usr/local/bin/ && chmod a+x apktool");
 
@@ -55,20 +55,20 @@ int apkMenu()
         }
         // This program can't decompile files by himself, but i'm working on it, really!
         case 2:
-            system("cd ~/UniversalTool/");
+            system("cd ~/Universal_Tool/");
 
             printf("Throw your .apk in Kitchen folder and type apktool d name_of_file.apk to decompile it.\n");
             break;
         // Look at comment higher...
         case 3:
-            system("cd ~/UniversalTool/");
+            system("cd ~/Universal_Tool/");
 
             printf("Type apktool b name_of_file.apk in terminal.");
             break;
         // Look at comment higher#2 again...
         case 4:
         {
-            system("cd ~/UniversalTool/insides/smali/");
+            system("cd ~/Universal_Tool/insides/smali/");
 
             printf("Type 'java -jar baksmali.jar deodex ~/path/to/directory_with_your_Apk_and_odex_file/");
             return 0;
