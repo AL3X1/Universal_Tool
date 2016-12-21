@@ -74,7 +74,7 @@ int romMenu()
         case 3:
         {
 
-                system("cp ~/UniversalTool/insides/boot/* ~/UniversalTool/workspace/");
+                system("cp ~/Universal_Tool/insides/boot/* ~/Universal_Tool/workspace/");
 
             printf("Press enter to continue\n");
 
@@ -82,19 +82,19 @@ int romMenu()
 
             printf("\tUnpacking boot.img\n");
 
-                system("cd ~/UniversalTool/workspace/ && ./unpackbootimg -i boot.img");
+                system("cd ~/Universal_Tool/workspace/ && ./unpackbootimg -i boot.img");
 
             printf("\tMaking 'ramdisk' directory\n");
 
-                system("cd ~/UniversalTool/workspace/ && mkdir ramdisk");
+                system("cd ~/Universal_Tool/workspace/ && mkdir ramdisk");
 
             printf("\tReplacing boot.img-ramdisk.gz to 'ramdisk'\n");
 
-                system("cd ~/UniversalTool/workspace/ && mv boot.img-ramdisk.gz ramdisk");
+                system("cd ~/Universal_Tool/workspace/ && mv boot.img-ramdisk.gz ramdisk");
 
             printf("Unpacking ramdisk\n");
 
-                system("cd ~/UniversalTool/workspace/ramdisk && gzip -dc boot.img-ramdisk.gz | cpio -i");
+                system("cd ~/Universal_Tool/workspace/ramdisk && gzip -dc boot.img-ramdisk.gz | cpio -i");
 
             printf("\n\tboot.img and ramdisk ready\n");
 
@@ -116,7 +116,7 @@ int romMenu()
 
                 getchar();
 
-                system("cd ~/UniversalTool/workspace/");
+                system("cd ~/Universal_Tool/workspace/");
             break;
         }
         // Mounting system.img to editing
@@ -128,13 +128,13 @@ int romMenu()
 
             printf("\t\nI'm working! Please wait!\n");
 
-                system("cd ~/UniversalTool/workspace");
+                system("cd ~/Universal_Tool/workspace");
 
-                system("cp ~/UniversalTool/workspace/system.img ~/UniversalTool/");
+                system("cp ~/Universal_Tool/workspace/system.img ~/Universal_Tool/");
 
                 system("mkdir extractedsystem && sudo mount -t ext4 -o loop system.img extractedsystem");
 
-            printf("\tDone. .img file extracted to UniversalTool/extractedsystem/\n");
+            printf("\tDone. .img file extracted to Universal_Tool/extractedsystem/\n");
 
                 getchar();
             break;
@@ -142,20 +142,20 @@ int romMenu()
         // Unpacking system.new.dat
         case 6:
         {
-                system("cd ~/UniversalTool/insides/rom/ && cp sdat2img/* ~/UniversalTool/workspace/ ");
+                system("cd ~/Universal_Tool/insides/rom/ && cp sdat2img/* ~/Universal_Tool/workspace/ ");
 
             printf("Press any key to continue");
 
                 getchar();
 
-                system("cd ~/UniversalTool/workspace/ && ./sdat2img.py system.transfer.list system.new.dat system.img");
+                system("cd ~/Universal_Tool/workspace/ && ./sdat2img.py system.transfer.list system.new.dat system.img");
 
                 getchar();
             break;
         }
         // Removing workspace folder
         case 7:
-                system("cd ~/UniversalTool/ && rm -rf workspace && rm -rf extractedsystem");
+                system("cd ~/Universal_Tool/ && rm -rf workspace && rm -rf extractedsystem");
 
             break;
         // Installing SuperSU
@@ -164,7 +164,7 @@ int romMenu()
 
                 getchar();
 
-                system("cp ~/UniversalTool/insides/rom/supersu ~/UniversalTool/workspace/system/priv-app");
+                system("cp ~/Universal_Tool/insides/rom/supersu ~/Universal_Tool/workspace/system/priv-app");
 
             printf("\tDone\n");
 
