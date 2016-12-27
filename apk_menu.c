@@ -53,24 +53,29 @@ int apkMenu()
             apkMenu();
             break;
         }
-        // This program can't decompile files by himself, but i'm working on it, really!
+        // Decompile apk
         case 2:
-            system("cd ~/Universal_Tool/");
-
-            printf("Throw your .apk in Kitchen folder and type apktool d name_of_file.apk to decompile it.\n");
+                getchar();
+                system("cd ~/Universal_Tool/ && mkdir Decompiled_Files");
+                printf("Throw your .apk in Decompiled_Files folder\n");
+                getchar();
+                system("cd ~/Universal_Tool/Decompiled_Files && apktool d *");
+                getchar();
+            printf("Done! Press 'Enter' to continue");
             break;
-        // Look at comment higher...
+        // Building apk
         case 3:
-            system("cd ~/Universal_Tool/");
-
-            printf("Type apktool b name_of_file.apk in terminal.");
+                getchar();
+                system("cd ~/Universal_Tool/Decompiled_Files && apktool b *");
+            printf("Done! Your .apk is in Decompile_Files/yourapkfolder/dist.\n");
             break;
         // Look at comment higher#2 again...
         case 4:
-        {
-            system("cd ~/Universal_Tool/insides/smali/");
-
-            printf("Type 'java -jar baksmali.jar deodex ~/path/to/directory_with_your_Apk_and_odex_file/");
+        {   
+                system("cd ~/Universal_Tool/ && mkdir Deodexed_Files");
+                system("cd ~/Universal_Tool/insides/smali/ && java -jar baksmali.jar deodex ~/Universal_Tool/Deodexed_Files/* ");
+                getchar();
+            printf("Done! Your files in Deodexed_Files folder\n");
             return 0;
             break;
         }
