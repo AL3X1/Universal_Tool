@@ -25,78 +25,71 @@
 #include <stdlib.h>
 #include "rom_menu.c"
 #include "apk_menu.c"
+#include "port_menu.c"
+#include "fastboot_menu.c"
 
-void logo()
+void logo(void)
 {
-    printf("\t _   _       _                          _ _____           _\n");
-    printf("\t| | | |_ __ (___   _____ _ __ ___  __ _| |_   ____   ___ | |\n");
-    printf("\t| | | | '_ || | | / / _ | '__/ __|/ _` | | | |/ _ | / _ || |\n");
-    printf("\t| |_| | | | | || V |  __| |  |__ | (_| | | | | (_) | (_) | |\n");
-    printf("\t |___/|_| |_|_| |_/ |___|_|  |___/|__,_|_| |_||___/ |___/|_|\n");
+	printf("#     # #######         #     #          \n");
+	printf("#     #    #            #  #  # # #    # \n");
+	printf("#     #    #            #  #  # # ##   # \n");
+	printf("#     #    #            #  #  # # # #  # \n");
+	printf("#     #    #            #  #  # # #  # # \n");
+	printf("#     #    #            #  #  # # #   ## \n");
+	printf(" #####     #    #######  ## ##  # #    # \n");
 
 }
 
-int main()
+int main(void)
 {
-    int     input;
-    clrscr();
+    int     user_key;
+    system("@cls||clear");
     logo();
 
-    printf("\n==============================\n");
-    printf("\t\nUNIVERSAL TOOL is STARTED\n");
-    printf("\n==============================\n");
-    printf("\n\t[1] Enter to ROM Menu\n");
-    printf("\t[2] Enter to APK Menu\n");
-    printf("\t[3] ADB Devices\n");
-    printf("\t[4] Fastboot Menu\n");
-    printf("\t[5] Install ADB\n");
-    printf("\t[6] Exit\n");
-    printf("\tWhat you want?: ");
+    printf("============================================\n");
+    printf(" Welcome to UNIVERSAL_TOOL                 |\n");
+    printf("============================================\n");
+    printf("| [1] Enter to ROM Menu                    |\n");
+    printf("| [2] Enter to APK Menu                    |\n");
+    printf("| [3] Enter to Porting menu(Experemental!) |\n");
+    printf("| [4] Fastboot Menu                        |\n");
+    printf("============================================\n");
+    printf("\n[0] Exit\n");
+    printf("\nWhat you want?: ");
 
     // Waiting for user input
-    scanf("%d", &input);
+    scanf("%d", &user_key);
 
-    // Menu accelerate
-    switch(input)
+    switch(user_key)
     {
-       // Calling romMenu function (from rom_menu.c)
+        // Return accelerate to user
+        case 0:
+            printf("Goodbye ;P\n");
+            return 0;
+            break;
+
+        // Calling romMenu function (from rom_menu.c)
         case 1:
             romMenu();
             break;
-       // Calling apkMenu function (from apk_menu.c)
+
+        // Calling apkMenu function (from apk_menu.c)
         case 2:
             apkMenu();
             break;
-      // Execution adb service (for showing devices, connected to PC)
+
+        // Calling portMenu function (from port_menu.c)
         case 3:
-                system("adb devices");
+            portMenu();
             break;
-      // Execution fastboot service (for connect device in fastboot mode to PC)
+
+        // Calling fastboot menu
         case 4:
-                system("fastboot");
+            fastbootMenu();
             break;
-        case 5:
-        {
-            // Getting android rules for adb
-                system("sudo wget -O /etc/udev/rules.d/51-android.rules https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/android/51-android.rules");
-            // Appropriation read/write mode to 51-android.rules
-                system("sudo chmod a+r /etc/udev/rules.d/51-android.rules");
-            // Restarting udev service (for accepting android rules)
-                system("sudo service udev restart");
-            // Recieving adb and fastboot services
-                system("sudo apt-get install android-tools-adb android-tools-fastboot");
-            printf("\nInstalling was succesful, now connect your device and press on 'adb menu'\n");
-            // Waiting to user input
-                getchar();
-            break;
-        }
-        // [6] - it's Exit, return 0 to return accelerate to user
-        case 6:
-            printf("Goodbye ;P\n");
-            return 0;
-        break;
+
         default:
-            printf("Make ur choice!\n");
+            printf("Make your choice!\n");
     }
     getchar();
 }
